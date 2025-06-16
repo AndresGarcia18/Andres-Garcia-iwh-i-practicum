@@ -1,0 +1,19 @@
+doctype html
+html(lang="en")
+    head
+        title= title
+        link(rel="stylesheet", href="/styles.css")
+    body
+        h1= title
+        form(action="/update", method="POST")
+            div
+                label(for="name") Book Name:
+                input(type="text", id="name", name="name", required)
+            div
+                label(for="genre") Genre:
+                input(type="text", id="genre", name="genre", required)
+            div
+                label(for="author") Author:
+                input(type="text", id="author", name="author", required)
+            button(type="submit") Add Book
+        a(href="/") Back to Home 
