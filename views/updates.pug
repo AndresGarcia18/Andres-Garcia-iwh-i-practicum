@@ -2,18 +2,20 @@ doctype html
 html(lang="en")
     head
         title= title
-        link(rel="stylesheet", href="/styles.css")
+        link(rel="stylesheet", href="/css/styles.css")
     body
         h1= title
-        form(action="/update", method="POST")
-            div
-                label(for="name") Book Name:
-                input(type="text", id="name", name="name", required)
-            div
-                label(for="genre") Genre:
-                input(type="text", id="genre", name="genre", required)
-            div
-                label(for="author") Author:
-                input(type="text", id="author", name="author", required)
-            button(type="submit") Add Book
-        a(href="/") Back to Home 
+        .form-container
+            form(action="/update-cobj", method="POST")
+                .form-group
+                    label(for="name") Book Name:
+                    input(type="text", id="name", name="name", required, placeholder="Enter book name")
+                .form-group
+                    label(for="genre") Genre:
+                    input(type="text", id="genre", name="genre", required, placeholder="Enter book genre")
+                .form-group
+                    label(for="author") Author:
+                    input(type="text", id="author", name="author", required, placeholder="Enter author name")
+                .button-group
+                    button(type="submit") Add Book
+                    a.back-link(href="/") Return to the homepage 

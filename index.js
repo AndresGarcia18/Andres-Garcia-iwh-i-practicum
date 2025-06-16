@@ -26,11 +26,11 @@ app.get('/', async (req, res) => {
     }
 });
 
-app.get('/update', (req, res) => {
-    res.render('updates', { title: 'Add New Book' });
+app.get('/update-cobj', (req, res) => {
+    res.render('updates', { title: 'Update Custom Object Form | Integrating With HubSpot I Practicum' });
 });
 
-app.post('/update', async (req, res) => {
+app.post('/update-cobj', async (req, res) => {
     const book = {
         properties: {
             "name": req.body.name,

@@ -2,22 +2,20 @@ doctype html
 html(lang="en")
     head
         title= title
-        link(rel="stylesheet", href="/styles.css")
+        link(rel="stylesheet", href="/css/styles.css")
     body
         h1= title
-        a(href="/update") Add New Book
+        a.add-book-link(href="/update-cobj") Add to this table
         if data && data.length > 0
-            table
-                thead
-                    tr
-                        th Name
-                        th Genre
-                        th Author
-                tbody
-                    each book in data
-                        tr
-                            td= book.properties.name
-                            td= book.properties.genre
-                            td= book.properties.author
+            .book-grid
+                each book in data
+                    .book-card
+                        h3= book.properties.name
+                        .book-info
+                            strong Genre:
+                            span= book.properties.genre
+                        .book-info
+                            strong Author:
+                            span= book.properties.author
         else
             p No books found 
